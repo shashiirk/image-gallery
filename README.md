@@ -10,7 +10,7 @@ A random collection of beautiful images provided by [Pixabay](https://pixabay.co
 
 See it live [here](https://shashiirk.github.io/image-gallery).
 
-## Get Started
+## Installation
 
 Clone this repository to your local machine
 

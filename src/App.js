@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
+import img from './assets/empty.svg';
 import ImageCard from './components/ImageCard';
 import Footer from './components/Footer';
 
@@ -36,7 +37,11 @@ function App() {
   let mainContent;
 
   if (isLoading) {
-    mainContent = <p>Searching...</p>;
+    mainContent = (
+      <div className="my-16">
+        <p className="text-center text-gray-800 font-medium">Searching...</p>
+      </div>
+    );
   } else {
     if (images.length > 0) {
       mainContent = (
@@ -47,7 +52,14 @@ function App() {
         </div>
       );
     } else {
-      mainContent = <p>Not found</p>;
+      mainContent = (
+        <div className="my-16 flex flex-col items-center">
+          <p className="text-center text-gray-800 font-medium mb-4">
+            Oops! No results were found
+          </p>
+          <img className="block" src={img} alt="a man looking at void" />
+        </div>
+      );
     }
   }
 

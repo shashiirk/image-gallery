@@ -11,6 +11,7 @@ module.exports = {
   },
   variants: {
     extend: {
+      textColor: ['active'],
       textDecoration: ['active'],
     },
   },

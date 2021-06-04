@@ -30,6 +30,12 @@ Start the application
 $ npm start
 ```
 
+You need an API key from Pixabay in order to work with this application. After getting your API key create a `.env` file in the root directory and paste the following snippet into it. Replace `YOUR_API_KEY` with your API key.
+
+```
+REACT_APP_PIXABAY_API_KEY=YOUR_API_KEY
+```
+
 ## Tools
 
 - [React](https://reactjs.org)

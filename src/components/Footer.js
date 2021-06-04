@@ -7,7 +7,7 @@ const Footer = () => {
           href="https://shashiirk.github.io/portfolio"
           target="_blank"
           rel="noreferrer"
-          className="text-green-400 outline-none hover-hover:hover:underline  hover-hover:focus:border-dotted hover-none:active:underline"
+          className="text-green-400 hover-hover:hover:underline  hover-hover:focus:border-dotted hover-none:active:underline"
         >
           Shashikanth
         </a>

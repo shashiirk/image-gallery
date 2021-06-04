@@ -1,6 +1,6 @@
 # Image Gallery
 
-A random collection of beautiful images provided by [Pixabay](https://pixabay.com)
+A random collection of beautiful images provided by [Pixabay](https://pixabay.com).
 
 ## Preview
 

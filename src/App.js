@@ -15,9 +15,16 @@ function App() {
     const request = async () => {
       setIsLoading(true);
       const response = await fetch(
-        `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${searchTerm}`
+        `/.netlify/functions/getImages?q=${searchTerm}`
       );
       const data = await response.json();
+
+      if (!response.ok) {
+        console.log(data);
+        setIsLoading(false);
+        return;
+      }
+
       setImages(data.hits);
       setIsLoading(false);
     };

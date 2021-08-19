@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <h1 className="text-center text-gray-800 mt-6 mb-14 text-6xl font-bold font-sans leading-tight">
+    <h1 className="text-center text-gray-800 mt-6 mb-14 text-6xl font-bold leading-tight">
       Images by{' '}
       <a
         href="https://pixabay.com"

@@ -13,7 +13,7 @@ const ImageCard = ({ image }) => {
           className="block overflow-hidden w-full h-60 object-cover rounded-t-lg hover-hover:transition hover-hover:duration-500 hover-hover:ease-in-out hover-hover:transform hover-hover:hover:scale-110 "
         />
       </a>
-      <div className="p-4 font-medium text-gray-600">
+      <div className="p-4 text-gray-600">
         <div className="mb-4">By {image.user}</div>
         <ul className=" flex justify-between">
           <li className="flex flex-col justify-center items-center">

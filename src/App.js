@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
@@ -10,12 +11,18 @@ function App() {
   const [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
+  const [hasMore, setHasMore] = useState(true);
+  const [page, setPage] = useState(1);
+
+  const perPage = 24;
 
   useEffect(() => {
     const request = async () => {
       setIsLoading(true);
+      setHasMore(true);
+      setPage(1);
       const response = await fetch(
-        `/.netlify/functions/getImages?q=${searchTerm}`
+        `/.netlify/functions/getImages?q=${searchTerm}&per_page=${perPage}&page=${1}`
       );
       const data = await response.json();
 
@@ -37,6 +44,37 @@ function App() {
     }
   }, [searchTerm]);
 
+  const fetchImages = () => {
+    if (images.length + perPage > 500) {
+      setHasMore(false);
+      return;
+    }
+
+    fetch(
+      `/.netlify/functions/getImages?q=${searchTerm}&per_page=${perPage}&page=${
+        page + 1
+      }`
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(
+            JSON.stringify({
+              status: response.status,
+              statusText: response.statusText,
+            })
+          );
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setImages((prevImages) => [...prevImages, ...data.hits]);
+      })
+      .catch((error) => {
+        console.log(JSON.parse(error.message));
+      })
+      .finally(() => setPage((prevPage) => prevPage + 1));
+  };
+
   const searchTermHandler = (value) => {
     setSearchTerm(value);
   };
@@ -52,11 +90,18 @@ function App() {
   } else {
     if (images.length > 0) {
       mainContent = (
-        <div className="my-16 grid gap-4 justify-items-stretch sm:grid-cols-2 md:grid-cols-3">
+        <InfiniteScroll
+          dataLength={images.length}
+          next={fetchImages}
+          hasMore={hasMore}
+          loader={<h4>Loading...</h4>}
+          endMessage={<h4>You have reached the end!</h4>}
+          className="my-16 grid gap-4 justify-items-stretch sm:grid-cols-2 md:grid-cols-3"
+        >
           {images.map((image) => (
             <ImageCard key={image.id} image={image} />
           ))}
-        </div>
+        </InfiniteScroll>
       );
     } else {
       mainContent = (

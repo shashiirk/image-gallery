@@ -20,7 +20,7 @@ const SearchBar = (props) => {
       <div className="max-w-md w-full rounded-xl m-auto flex bg-white shadow-md focus-within:ring-2 focus-within:ring-green-400">
         <input
           type="text"
-          className="w-full outline-none rounded-tl-xl rounded-bl-xl pl-4 py-3 font-medium"
+          className="w-full outline-none rounded-tl-xl rounded-bl-xl pl-4 py-3"
           placeholder="Search images..."
           value={inputTerm}
           onChange={changeInputHandler}

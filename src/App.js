@@ -45,6 +45,7 @@ function App() {
   }, [searchTerm]);
 
   const fetchImages = () => {
+    return;
     if (images.length + perPage > 500) {
       setHasMore(false);
       return;
@@ -117,8 +118,8 @@ function App() {
 
   return (
     <div className="app bg-gray-50">
+      <Header />
       <div className="p-4 m-auto flex-1 max-w-5xl w-full">
-        <Header />
         <SearchBar onInputSubmit={searchTermHandler} />
         {mainContent}
       </div>

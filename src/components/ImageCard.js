@@ -1,3 +1,5 @@
+const bgColors = ['bg-red-500', 'bg-green-500', 'bg-blue-500'];
+
 const ImageCard = ({ image }) => {
   return (
     <div className="bg-white rounded-lg shadow-md w-full">
@@ -14,20 +16,33 @@ const ImageCard = ({ image }) => {
         />
       </a>
       <div className="p-4 text-gray-600">
-        <div className="mb-4">By {image.user}</div>
-        <ul className=" flex justify-between">
+        <div className="mb-4 text-sm">
+          BY <span className="font-medium">{image.user}</span>
+        </div>
+        <ul className="flex justify-between mb-4">
           <li className="flex flex-col justify-center items-center">
-            <small className="text-base">Views</small>
-            <p className="text-lg font-semibold">{image.views}</p>
+            <small className="text-sm">Views</small>
+            <p className="font-semibold">{image.views}</p>
           </li>
           <li className="flex flex-col justify-center items-center">
-            <small className="text-base">Likes</small>
-            <p className="text-lg font-semibold">{image.likes}</p>
+            <small className="text-sm">Likes</small>
+            <p className="font-semibold">{image.likes}</p>
           </li>
           <li className="flex flex-col justify-center items-center">
-            <small className="text-base">Downloads</small>
-            <p className="text-lg font-semibold">{image.downloads}</p>
+            <small className="text-sm">Downloads</small>
+            <p className="font-semibold">{image.downloads}</p>
           </li>
+        </ul>
+        <ul className="flex text-xs">
+          {image.tags.split(',').map((value, index) => (
+            <li
+              className={`${
+                bgColors[index]
+              } text-white px-2 py-1 rounded-full ${index === 2 ? '' : 'mr-1'}`}
+            >
+              {value}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

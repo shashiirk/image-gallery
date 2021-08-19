@@ -1,16 +1,10 @@
 const Header = () => {
   return (
-    <h1 className="text-center text-gray-800 mt-6 mb-14 text-6xl font-bold leading-tight">
-      Images by{' '}
-      <a
-        href="https://pixabay.com"
-        target="_blank"
-        rel="noreferrer"
-        className="text-green-400 hover-hover:hover:text-green-600 hover-hover:transition hover-hover:duration-500 hover-none:active:text-green-600"
-      >
-        Pixabay
+    <div className="text-center bg-gray-800 text-white mb-10 px-4 py-6 text-3xl font-semibold leading-tight">
+      <a href="/" rel="noreferrer">
+        Image Gallery
       </a>
-    </h1>
+    </div>
   );
 };
 

@@ -3,8 +3,8 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
-import img from './assets/empty.svg';
 import ImageCard from './components/ImageCard';
+import Skeleton from './components/Skeleton';
 import Footer from './components/Footer';
 
 function App() {
@@ -45,7 +45,6 @@ function App() {
   }, [searchTerm]);
 
   const fetchImages = () => {
-    return;
     if (images.length + perPage > 500) {
       setHasMore(false);
       return;
@@ -84,8 +83,8 @@ function App() {
 
   if (isLoading) {
     mainContent = (
-      <div className="my-16">
-        <p className="text-center text-gray-800 font-medium">Searching...</p>
+      <div className="my-16 grid gap-4 justify-items-stretch sm:grid-cols-2 md:grid-cols-3">
+        <Skeleton />
       </div>
     );
   } else {
@@ -95,7 +94,7 @@ function App() {
           dataLength={images.length}
           next={fetchImages}
           hasMore={hasMore}
-          loader={<h4>Loading...</h4>}
+          loader={<Skeleton />}
           endMessage={<h4>You have reached the end!</h4>}
           className="my-16 grid gap-4 justify-items-stretch sm:grid-cols-2 md:grid-cols-3"
         >
@@ -106,11 +105,9 @@ function App() {
       );
     } else {
       mainContent = (
-        <div className="my-16 flex flex-col items-center">
-          <p className="text-center text-gray-800 font-medium mb-4">
-            Oops! No results were found
-          </p>
-          <img className="block" src={img} alt="a man looking at void" />
+        <div className="my-16 flex flex-col items-center text-gray-600">
+          <p className="text-8xl font-semibold mb-2">Oops!</p>
+          <p className="text-2xl">No results were found</p>
         </div>
       );
     }

@@ -2,7 +2,7 @@ const bgColors = ['bg-red-500', 'bg-green-500', 'bg-blue-500'];
 
 const ImageCard = ({ image }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md w-full">
+    <div className="bg-white rounded-lg shadow w-full">
       <a
         href={image.pageURL}
         target="_blank"

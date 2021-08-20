@@ -15,7 +15,7 @@ const SearchBar = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className="max-w-md w-full rounded-lg m-auto flex bg-white shadow-md">
+      <div className="max-w-md w-full rounded-lg m-auto flex bg-white shadow">
         <input
           type="text"
           className="w-full outline-none rounded-tl-xl rounded-bl-xl pl-4 py-3"

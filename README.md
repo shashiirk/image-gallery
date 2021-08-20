@@ -15,7 +15,7 @@ A random collection of beautiful images provided by [Pixabay](https://pixabay.co
 
 ## Preview
 
-![preview](https://user-images.githubusercontent.com/48406108/120775387-c6463200-c540-11eb-92d6-d1928d54dc1e.gif)
+![preview](https://user-images.githubusercontent.com/48406108/130196607-28da824e-f979-4c64-b11a-4959918325de.gif)
 
 ## Live Demo
 

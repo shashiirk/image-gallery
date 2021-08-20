@@ -12,6 +12,9 @@ module.exports = {
       colors: {
         gray: colors.blueGray,
       },
+      height: {
+        skeleton: '392px',
+      },
     },
   },
   variants: {

@@ -1,4 +1,13 @@
-# Image Gallery
+<p align="center">
+  <a href="https://an-image-gallery.netlify.app">
+    <img alt="logo" src="public/logo.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Image Gallery
+</h1>
+
+## Description
 
 A random collection of beautiful images provided by [Pixabay](https://pixabay.com).
 

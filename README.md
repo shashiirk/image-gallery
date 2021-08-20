@@ -7,7 +7,7 @@
   Image Gallery
 </h1>
 
-<p align="center"><a href="https://app.netlify.com/sites/an-image-gallery/deploys"><img alt="logo" src="https://api.netlify.com/api/v1/badges/c72c1fcd-c167-4d57-98cc-bfe7d819b2a9/deploy-status" width="60" /></a></p>
+<p align="center"><a href="https://app.netlify.com/sites/an-image-gallery/deploys"><img alt="logo" src="https://api.netlify.com/api/v1/badges/c72c1fcd-c167-4d57-98cc-bfe7d819b2a9/deploy-status" /></a></p>
 
 ## Description
 

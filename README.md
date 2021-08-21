@@ -36,4 +36,4 @@ Inspired from [this](https://youtu.be/FiGmAI5e91M) YouTube video.
 
 ## Licence
 
-This project is licensed under [MIT](https://choosealicense.com/licenses/mit).
+This project is licensed under [MIT](LICENSE).

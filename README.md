@@ -21,6 +21,12 @@ A random collection of beautiful images provided by [Pixabay](https://pixabay.co
 
 See it live [here](https://an-image-gallery.netlify.app).
 
+## Features
+
+- Shows images
+- Search for images
+- Infinite scroll
+
 ## Tools
 
 - [React](https://reactjs.org)
